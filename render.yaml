@@ -1,0 +1,20 @@
+databases:
+  - name: elekgo_app
+    databaseName: test-render
+    user: test_render_rkai_user
+
+services:
+  - type: web
+    name: elekgo_app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn elekgo.wsgi:application"
+    envVars:
+      - key: postgres://test_render_rkai_user:JnBHSQy1LLVDafk9XSD82OeRBtBS9DcZ@dpg-ce2becen6mpu84plg0a0-a.oregon-postgres.render.com/test_render_rkai
+        fromDatabase:
+          name: elekgo_app
+          property: connectionString
+      - key: django-insecure-6@n_9-qro102&&#6-qg23lb1nl=)fn3&2-^+2u^+ry^8^^7r*%
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
