@@ -1,7 +1,7 @@
 databases:
   - name: elekgo_app
-    databaseName: test-render
-    user: test_render_rkai_user
+    databaseName: railway
+    user: postgres
 
 services:
   - type: web
@@ -10,7 +10,7 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn elekgo.wsgi:application"
     envVars:
-      - key: postgres://test_render_rkai_user:JnBHSQy1LLVDafk9XSD82OeRBtBS9DcZ@dpg-ce2becen6mpu84plg0a0-a.oregon-postgres.render.com/test_render_rkai
+      - key: postgresql://${{ postgres }}:${{ stoWSHjBsQrSBZhHbpCm }}@${{ containers-us-west-162.railway.app }}:${{ 6517 }}/${{ railway }}
         fromDatabase:
           name: elekgo_app
           property: connectionString
