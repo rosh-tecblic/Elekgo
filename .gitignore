@@ -2,3 +2,4 @@
 *.pyo
 /db/*.sqlite3
 .sqlite3
+elekgo-env/
