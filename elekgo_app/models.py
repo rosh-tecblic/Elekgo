@@ -77,7 +77,7 @@ class User(AbstractBaseUser):
     user_image = models.ImageField(null=True, blank=True, upload_to='static/images')
     user_aadhar_image = models.ImageField(null=True, blank=True, upload_to='static/images', verbose_name='Aadhar Front Image')
     user_aadhar_image_back = models.ImageField(null=True, blank=True, upload_to='static/images', verbose_name='Aadhar Back Image')
-    user_aadhar_identification_num = models.IntegerField(null=True, blank=True, unique=True)
+    user_aadhar_identification_num = models.BigIntegerField(null=True, blank=True, unique=True)
 
     # admin User Fields
     user_role = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default=5)
