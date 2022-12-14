@@ -196,8 +196,8 @@ EMAIL_PORT = 587
 # EMAIL_PORT = 465
 # EMAIL_HOST_USER = 'dev.tecblic@elekgo.com'
 # EMAIL_HOST_PASSWORD = 'Elekgo@Tecblic2022'
-EMAIL_HOST_USER = 'palak.doshi@tecblic.com'
-EMAIL_HOST_PASSWORD = 'Palak@20799'
+EMAIL_HOST_USER = 'johndoetest153@gmail.com'
+EMAIL_HOST_PASSWORD = 'asdfg@123'
 EMAIL_USE_TLS = True
 
 SIMPLE_JWT = {
