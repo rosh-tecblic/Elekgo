@@ -1279,7 +1279,7 @@ class GetAvailableVehicles(APIView):
     def get(self, request, pk):
         all_data = []
         loc = locations_data(pk)
-        for rec in loc:
+        # for rec in loc:
             # scooter = ast.literal_eval(loc[rec]) if type(loc[rec]) == str else [loc[rec]]
         #     all_data.append({
         #         "location_stand": geolocator.reverse(scooter[0].get('latitude') + "," + scooter[0].get('longtitude'))[0],
@@ -1288,73 +1288,104 @@ class GetAvailableVehicles(APIView):
         #         "scooter_data": scooter
         #     })
         # return Response({'vehicle_data': all_data }, status=status.HTTP_200_OK)
-            all_data = {
-                "vehicle_data": [
-                    {
-                        "location_stand": "Ghatlodiya, Ahmedabad, Ahmedabad City Taluka, Ahmedabad District, Gujarat, 380001, India",
-                        "latitude": "23.07608",
-                        "longitude": "72.52638",
-                        "scooter_data": [
-                            {
-                                "latitude": "23.07608",
-                                "longtitude": "72.52638",
-                                "vehicle": "WCM202100002",
-                                "is_reserved": False,
-                                "battery_percentage": 50,
-                                "max_km_capacity": "25/Km"
-                            },
-                            {
-                                "latitude": "23.07608",
-                                "longtitude": "72.52638",
-                                "vehicle": "WCM202100002",
-                                "is_reserved": False,
-                                "battery_percentage": 50,
-                                "max_km_capacity": "25/Km"
-                            },
-                            {
-                                "latitude": "23.07608",
-                                "longtitude": "72.52638",
-                                "vehicle": "WCM202100002",
-                                "is_reserved": False,
-                                "battery_percentage": 50,
-                                "max_km_capacity": "25/Km"
-                            },
-                            {
-                                "latitude": "23.07608",
-                                "longtitude": "72.52638",
-                                "vehicle": "WCM202100002",
-                                "is_reserved": False,
-                                "battery_percentage": 50,
-                                "max_km_capacity": "25/Km"
-                            }
-                        ]
-                    },
-                    {
-                        "location_stand": "Gandhinagar-Sarkhej Highway, Gandhinagar, Gandhinagar Taluka, Gandhinagar District, Gujarat, 382423, India",
-                        "latitude": "23.18250",
-                        "longitude": "72.59683",
-                        "scooter_data": [
-                            {
-                                "latitude": "23.18250",
-                                "longtitude": "72.59683",
-                                "vehicle": "WCM2021002974",
-                                "is_reserved": False,
-                                "battery_percentage": 50,
-                                "max_km_capacity": "25/Km"
-                            }
-                        ]
-                    },
-                    {
-                        "location_stand": "Iscon, Gandhinagar-Sarkhej Highway, Gujarat, 382423, India",
-                        "latitude": "23.0202434",
-                        "longitude": "72.5797426",
-                        "scooter_data": [
+        all_data = {
+            "vehicle_data": [
+                {
+                    "location_stand": "Ghatlodiya, Ahmedabad, Ahmedabad City Taluka, Ahmedabad District, Gujarat, 380001, India",
+                    "latitude": "23.07608",
+                    "longitude": "72.52638",
+                    "scooter_data": [
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": True,
+                            "battery_percentage": 50,
+                            "max_km_capacity": "25/Km"
+                        },
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": True,
+                            "battery_percentage": 20,
+                            "max_km_capacity": "25/Km"
+                        },
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": False,
+                            "battery_percentage": 50,
+                            "max_km_capacity": "25/Km"
+                        },
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": False,
+                            "battery_percentage": 30,
+                            "max_km_capacity": "25/Km"
+                        }
+                    ]
+                },
+                {
+                    "location_stand": "Gandhinagar-Sarkhej Highway, Gandhinagar, Gandhinagar Taluka, Gandhinagar District, Gujarat, 382423, India",
+                    "latitude": "23.18250",
+                    "longitude": "72.59683",
+                    "scooter_data": [
+                        {
+                            "latitude": "23.18250",
+                            "longtitude": "72.59683",
+                            "vehicle": "WCM2021002974",
+                            "is_reserved": False,
+                            "battery_percentage": 50,
+                            "max_km_capacity": "25/Km"
+                        }
+                    ]
+                },
+                {
+                    "location_stand": "Iscon, Gandhinagar-Sarkhej Highway, Gujarat, 382423, India",
+                    "latitude": "23.0202434",
+                    "longitude": "72.5797426",
+                    "scooter_data": [
 
-                        ]
-                    }
-                ]
-            }
-            return Response(all_data, status=status.HTTP_200_OK)
+                    ]
+                },
+                {
+                    "location_stand": "Panjrapol, Ahmedabad, Ahmedabad City Taluka, Ahmedabad District, Gujarat, 380001, India",
+                    "latitude": "23.07685",
+                    "longitude": "72.52658",
+                    "scooter_data": [
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": True,
+                            "battery_percentage": 50,
+                            "max_km_capacity": "25/Km"
+                        },
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": True,
+                            "battery_percentage": 20,
+                            "max_km_capacity": "25/Km"
+                        },
+                        {
+                            "latitude": "23.07608",
+                            "longtitude": "72.52638",
+                            "vehicle": "WCM202100002",
+                            "is_reserved": False,
+                            "battery_percentage": 50,
+                            "max_km_capacity": "25/Km"
+                        },
+                    ]
+                },
+            ]
+        }
+        return Response(all_data, status=status.HTTP_200_OK)
 
 
 class GetAllUsersData(APIView, LimitOffsetPagination):
