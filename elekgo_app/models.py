@@ -194,6 +194,7 @@ class Vehicle(models.Model):
         return str(self.vehicle_unique_identifier)
 
     def save(self, *args, **kwargs):
+        print("===================================")
         qr_image = qrcode.make(self.vehicle_unique_identifier)
         qr_offset = Image.new('RGB', (310, 310), 'white')
         draw_img = ImageDraw.Draw(qr_offset)
